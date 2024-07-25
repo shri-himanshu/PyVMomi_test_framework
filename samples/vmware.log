@@ -1,0 +1,13 @@
+2024-07-20 19:19:26,779 ERROR Failed to connect to VMware environment: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)
+2024-07-20 19:23:28,393 ERROR Failed to connect to VMware environment: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)
+2024-07-20 19:27:20,528 ERROR Failed to connect to VMware environment: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)
+2024-07-20 19:27:32,839 INFO Connected to VMware environment
+2024-07-20 19:27:47,308 ERROR Failed to create datastore example_datastore on host localhost.localdomain: type object 'vim.host.DatastoreSystem' has no attribute 'DatastoreSpec'
+2024-07-20 19:27:58,395 ERROR Datastore example_datastore not found on host localhost.localdomain
+2024-07-20 19:28:04,998 INFO Created vSwitch example_vswitch on host localhost.localdomain
+2024-07-20 19:28:54,748 INFO Deleted vSwitch example_vswitch from host localhost.localdomain
+2024-07-20 19:29:04,434 INFO Disconnected from VMware environment
+2024-07-20 19:31:59,349 INFO Connected to VMware environment
+2024-07-20 19:32:42,919 INFO Connected to VMware environment
+2024-07-20 19:33:49,326 ERROR Host test_vSwitch not found
+2024-07-21 09:38:04,768 ERROR Failed to connect to VMware environment: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond

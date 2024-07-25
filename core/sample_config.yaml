@@ -1,0 +1,59 @@
+# VMware Connection Settings
+vmware:
+  host: "vcenter.example.com"
+  user: "administrator@vsphere.local"
+  password: "password"
+  port: 443
+
+# Standalone ESXi Host Connection Settings
+esxi_hosts:
+  - name: "esxi1"
+    host: "100.98.84.67"
+    user: "root"
+    password: "Dell@123"
+    port: 443
+#  - name: "esxi2"
+#    host: "esxi2.example.com"
+#    user: "root"
+#    password: "password"
+#    port: 443
+
+# Logging Settings
+logging:
+  log_file: "vmware.log"
+  log_level: "INFO"
+
+# Test Environment Settings
+test_environment:
+  default_template: "ubuntu_template"
+  default_datastore: "datastore1"
+  default_network: "VM Network"
+  default_cpu: 2
+  default_memory: 4096
+
+# Report Settings
+report:
+  report_file: "test_report.json"
+
+# Performance Tool Settings
+performance_tools:
+  tool1:
+    path: "/path/to/tool1"
+    options: "--option1 --option2"
+  tool2:
+    path: "/path/to/tool2"
+    options: "--option3 --option4"
+
+# Scale Operation Settings
+scale_operations:
+  max_vms: 50
+  min_vms: 5
+
+# Network Settings
+network:
+  default_vlan: "vlan100"
+  vswitch_name: "vSwitch0"
+
+# Metadata Collection Settings
+metadata:
+  collect_interval: 300 # in seconds
