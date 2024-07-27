@@ -26,7 +26,7 @@ def main():
 
     # Print the result
     print(result)
-    vm
+
 
 if __name__ == "__main__":
     main()
