@@ -1,23 +1,16 @@
-# VMware Connection Settings
 vmware:
-  host: "vcenter.example.com"
-  user: "administrator@vsphere.local"
-  password: "password"
-  port: 443
-
-# Standalone ESXi Host Connection Settings
-esxi_hosts:
-  name: "esxi1"
-  host: "100.98.84.67"
-  user: "root"
-  password: "Dell@123"
-  port: 443
-  disableSslCertValidation: True
-#  - name: "esxi2"
-#    host: "esxi2.example.com"
-#    user: "root"
-#    password: "password"
-#    port: 443
+  vcenter:
+    host: "vcenter.example.com"
+    user: "administrator@vsphere.local"
+    password: "password"
+    port: 443
+    disableSslCertValidation: True
+  esxi:
+    host: "100.98.84.67"
+    user: "root"
+    password: "Dell@123"
+    port: 443
+    disableSslCertValidation: True
 
 # Logging Settings
 logging:
@@ -53,7 +46,7 @@ scale_operations:
 # Network Settings
 network:
   default_vlan: "vlan100"
-  vswitch_name: "vSwitch0"
+  vswitch_name: "vSwitchtest1"
 
 # Metadata Collection Settings
 metadata:

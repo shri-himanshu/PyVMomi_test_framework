@@ -1,32 +1,32 @@
-# Example of using VMwareClient to perform operations on a standalone ESXi host
+# sample_script.py
+import time
 
-from core.vmware_client import VMwareClient
 from models.vswitch_model import VSwitchModel
+from core.config import Config
 
 
-client = VMwareClient()
-import pdb;pdb.set_trace()
-# Connect to the ESXi host
-client.connect()
+def main():
+    # Load configuration
+    config = Config()
 
-# Get the host system
-host = client._get_host_system()
+    connection_type = 'esxi'  # or 'esxi'
 
-# Create a datastore on the ESXi host
-# result = client.create_datastore(datastore_name="example_datastore", host=host)
-# print(result)
-#
-# # Delete the datastore from the ESXi host
-# result = client.delete_datastore(datastore_name="example_datastore", host=host)
-# print(result)
-#
-# # Create a vSwitch on the ESXi host
-# result = client.create_vswitch(vswitch_name="example_vswitch", num_ports=128, host=host)
-# print(result)
-#
-# # Delete the vSwitch from the ESXi host
-# result = client.delete_vswitch(vswitch_name="example_vswitch", host=host)
-# print(result)
+    # Create VSwitchModel object
+    vswitch_model = VSwitchModel(connection_type)
 
-# Disconnect from the ESXi host
-client.disconnect()
+    # Create a virtual switch
+    vswitch_name = config.get('network.vswitch_name')
+    num_ports = 128  # Default number of ports
+    try:
+        result = vswitch_model.create_vswitch(vswitch_name, num_ports)
+    except Exception as err:
+        print("failed to create vswitch")
+    time.sleep(10)
+    vswitch_model.delete_vswitch(vswitch_name)
+
+    # Print the result
+    print(result)
+    vm
+
+if __name__ == "__main__":
+    main()

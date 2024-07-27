@@ -3,10 +3,34 @@
 import os
 
 import yaml
+import argparse
+import os
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="PyVmomi Framework")
+    parser.add_argument(
+        "--config",
+        type=str,
+        required=True,
+        help="Path to the configuration file (config.yaml)"
+    )
+    return parser.parse_args()
+
 
 class Config:
-    def __init__(self, config_file='sample_config.yaml'):
+    def __init__(self, config_file=None):
+        # config_file = os.path.join(os.getcwd(), config_file)
+        # with open(config_file, 'r') as file:
+        #     self.config = yaml.safe_load(file)
+        if config_file is None:
+            args = parse_args()
+            config_file = args.config
+
         config_file = os.path.join(os.getcwd(), config_file)
+        if not os.path.isfile(config_file):
+            raise FileNotFoundError(f"Configuration file not found: {config_file}")
+
         with open(config_file, 'r') as file:
             self.config = yaml.safe_load(file)
 
